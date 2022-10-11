@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { GetServerSideProps, GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -81,11 +81,11 @@ const Home: NextPage<Props> = ({
   )
 }
 
-export const getStaticProps: GetStaticProps = () => {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       test: {
-        a: process.env.APP_ENV,
+        a: process.env.APP_ENV || null,
       },
     },
   }
