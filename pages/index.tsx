@@ -5,7 +5,9 @@ import { useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 interface Props {
-  test: string;
+  test: {
+    a: string;
+  };
 }
 
 const Home: NextPage<Props> = ({
