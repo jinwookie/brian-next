@@ -28,6 +28,7 @@ const Home: NextPage<Props> = ({
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <h2>Environment: {test.a}</h2>
+        <h3>Updated</h3>
 
         <p className={styles.description}>
           Get started by editing{' '}
