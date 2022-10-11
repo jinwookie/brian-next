@@ -4,7 +4,11 @@ import Image from 'next/image'
 import { useState } from 'react'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = ({
+interface Props {
+  test: string;
+}
+
+const Home: NextPage<Props> = ({
   test,
 }) => {
   const [home, setHome] = useState<string>('')
