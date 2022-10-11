@@ -1,9 +1,14 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+const Home: NextPage = ({
+  test,
+}) => {
+  const [home, setHome] = useState<string>('')
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,6 +21,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <h2> {test.a}</h2>
 
         <p className={styles.description}>
           Get started by editing{' '}
@@ -67,6 +73,16 @@ const Home: NextPage = () => {
       </footer>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      test: {
+        a: 'Test A',
+      },
+    },
+  }
 }
 
 export default Home
