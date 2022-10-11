@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
       test: {
-        a: 'Test A',
+        a: process.env.APP_ENV,
       },
     },
   }
